@@ -126,5 +126,5 @@ if __name__ == "__main__":
 We compared the multi-language speech recognition performance of Fun-ASR with other models on open-source benchmark datasets (including AISHELL-1, AISHELL-2, Wenetspeech, Librispeech, and Common Voice).
 
 <div align="center">
-<img src="images/compare_zh.png" width="800" />
+<img src="images/compare_en.png" width="800" />
 </div>
