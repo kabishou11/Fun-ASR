@@ -1,8 +1,8 @@
 # Fun-ASR
 
-「简体中文」|「[English](README_en.md)」
+「[简体中文](README_zh.md)」|「English」
 
-Fun-ASR 是通义实验室推出的端到端语音识别大模型，是基于数千万小时真实语音数据训练而成，具备强大的上下文理解能力与行业适应性，支持低延迟实时听写，并且覆盖 31 个语种。在教育、金融等垂直领域表现出色，能准确识别专业术语与行业表达，有效应对"幻觉"生成和语种混淆等挑战，实现"听得清、懂其意、写得准"。
+Fun-ASR is an end-to-end speech recognition large model launched by Tongyi Lab. It is trained on tens of millions of hours of real speech data, possessing powerful contextual understanding capabilities and industry adaptability. It supports low-latency real-time transcription and covers 31 languages. It excels in vertical domains such as education and finance, accurately recognizing professional terminology and industry expressions, effectively addressing challenges like "hallucination" generation and language confusion, achieving "clear hearing, understanding meaning, and accurate writing."
 
 <div align="center">
 <img src="images/funasr-v2.png">
@@ -11,50 +11,52 @@ Fun-ASR 是通义实验室推出的端到端语音识别大模型，是基于数
 <div align="center">
 <h4>
 <a href="https://funaudiollm.github.io/Fun-ASR/"> Homepage </a>
-｜<a href="#核心特性"> 核心特性 </a>
-｜<a href="#性能评测"> 性能评测 </a>
-｜<a href="#环境安装"> 环境安装 </a>
-｜<a href="#用法教程"> 用法教程 </a>
+｜<a href="#core-features"> Core Features </a>
+｜<a href="#performance-evaluation"> Performance Evaluation </a>
+｜<a href="#environment-setup"> Environment Setup </a>
+｜<a href="#usage-tutorial"> Usage Tutorial </a>
 
 </h4>
 
-模型仓库：[modelscope](https://www.modelscope.cn/models/FunAudioLLM/Fun-ASR-Nano-2512)，[huggingface(coming)](https://huggingface.co/FunAudioLLM/FunASR)
+Model Repository: [modelscope](https://www.modelscope.cn/models/FunAudioLLM/Fun-ASR-Nano-2512), [huggingface](https://huggingface.co/FunAudioLLM/FunASR)
 
-在线体验：
-[魔搭社区创空间](https://modelscope.cn/studios/FunAudioLLM/Fun-ASR-Nano)，[huggingface space(coming)](https://huggingface.co/spaces/FunAudioLLM/FunASR)
+Online Experience:
+[ModelScope Community Space](https://modelscope.cn/studios/FunAudioLLM/Fun-ASR-Nano), [huggingface space](https://huggingface.co/spaces/FunAudioLLM/FunASR)
 
 </div>
 
-# 核心特性 🎯
+# Core Features 🎯
 
-**Fun-ASR** 专注于高精度语音识别、多语言支持和行业定制化能力
+**Fun-ASR** focuses on high-precision speech recognition, multi-language support, and industry customization capabilities
 
-- **远场高噪声识别：** 针对远距离拾音及高噪声场景（如会议室、车载环境、工业现场等）进行深度优化，识别准确率提升至 **93%**。
-- **中文方言与地方口音：**
-  - 支持 **7 大方言**：吴语、粤语、闽语、客家话、赣语、湘语、晋语
-  - 覆盖 **26 个地区口音**：包括河南、陕西、湖北、四川、重庆、云南、贵州、广东、广西等 20 多个地区
-- **多语言自由说：** 支持 **31 种语言**识别，重点优化东亚与东南亚语种，支持语种自由切换和混合识别。
-- **音乐背景歌词识别：** 强化在音乐背景干扰下的语音识别性能，支持对歌曲中歌词内容的精准识别。
+- **Far-field High-noise Recognition:** Deeply optimized for far-distance sound pickup and high-noise scenarios (such as conference rooms, in-vehicle environments, industrial sites, etc.), improving recognition accuracy to **93%**.
+- **Chinese Dialects and Regional Accents:**
+  - Supports **7 major dialects**: Wu, Cantonese, Min, Hakka, Gan, Xiang, Jin
+  - Covers **26 regional accents**: including Henan, Shaanxi, Hubei, Sichuan, Chongqing, Yunnan, Guizhou, Guangdong, Guangxi and more than 20 other regions
+- **Multi-language Free Speech:** Supports recognition of **31 languages**, with focused optimization on East and Southeast Asian languages, supporting free language switching and mixed recognition.
+- **Music Background Lyric Recognition:** Enhanced speech recognition performance under music background interference, supporting accurate recognition of lyric content in songs.
 
-# 环境安装 🐍
+# Environment Setup 🐍
 
 ```shell
 pip install -r requirements.txt
 ```
 
-<a name="用法教程"></a>
+<a name="usage-tutorial"></a>
 
 # TODO
 
-- [ ] 支持返回时间戳
-- [ ] 支持区分说话人识别
-- [ ] 支持模型训练
+[ ] Support returning timestamps
 
-# 用法 🛠️
+[ ] Support speaker diarization
 
-## 推理
+[ ] Support model training
 
-### 使用 funasr 推理
+# Usage 🛠️
+
+## Inference
+
+### Using funasr for inference
 
 ```python
 from funasr import AutoModel
@@ -91,7 +93,7 @@ if __name__ == "__main__":
     main()
 ```
 
-### 直接推理
+### Direct Inference
 
 ```python
 from model import FunASRNano
@@ -112,23 +114,21 @@ if __name__ == "__main__":
     main()
 ```
 
-<details><summary> 参数说明（点击展开）</summary>
+<details><summary> Parameter Description (click to expand) </summary>
 
-- `model_dir`：模型名称，或本地磁盘中的模型路径。
-- `trust_remote_code`：是否信任远程代码，用于加载自定义模型实现。
-- `remote_code`：指定模型具体代码的位置（例如，当前目录下的 `model.py`），支持绝对路径与相对路径。
-- `device`：指定使用的设备，如 "cuda:0" 或 "cpu"。
+- `model_dir`: Model name or local disk model path.
+- `trust_remote_code`: Whether to trust remote code for loading custom model implementations.
+- `remote_code`: Specify the location of specific model code (e.g., `model.py` in the current directory), supporting both absolute and relative paths.
+- `device`: Specify the device to use, such as "cuda:0" or "cpu".
 
 </details>
 
-# 性能评测 📝
+# Performance Evaluation 📝
 
-我们在开源基准数据集、中文方言测试集和工业测试集上，比较了 Fun-ASR 与其他模型的多语言语音识别性能。Fun-ASR 模型均具有明显的效果优势。
+## Multi-language Speech Recognition
 
-<div align="center">
-<img src="images/radar.png" width="800" />
-</div>
+We compared the multi-language speech recognition performance of Fun-ASR with other models on open-source benchmark datasets (including AISHELL-1, AISHELL-2, Wenetspeech, Librispeech, and Common Voice).
 
 <div align="center">
-<img src="images/hist.png" width="800" />
+<img src="images/compare_en.png" width="400" />
 </div>
