@@ -10,7 +10,7 @@ Fun-ASR 是通义实验室推出的端到端语音识别大模型，是基于数
 
 <div align="center">
 <h4>
-<a href="https://funaudiollm.github.io/Fun-ASR/"> Homepage </a>
+<a href="https://funaudiollm.github.io/funasr"> Homepage </a>
 ｜<a href="#核心特性"> 核心特性 </a>
 ｜<a href="#性能评测"> 性能评测 </a>
 ｜<a href="#环境安装"> 环境安装 </a>
@@ -21,7 +21,7 @@ Fun-ASR 是通义实验室推出的端到端语音识别大模型，是基于数
 模型仓库：[modelscope](https://www.modelscope.cn/models/FunAudioLLM/Fun-ASR-Nano-2512)，[huggingface](https://huggingface.co/FunAudioLLM/Fun-ASR-Nano-2512)
 
 在线体验：
-[魔搭社区创空间](https://modelscope.cn/studios/FunAudioLLM/Fun-ASR-Nano)，[huggingface space](https://huggingface.co/spaces/FunAudioLLM/Fun-ASR-Nano)
+[魔搭社区创空间](https://modelscope.cn/studios/FunAudioLLM/Fun-ASR)，[huggingface space](https://huggingface.co/spaces/FunAudioLLM/Fun-ASR)
 
 </div>
 
