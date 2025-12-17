@@ -51,6 +51,8 @@ Fun-ASR 是通义实验室推出的端到端语音识别大模型，是基于数
 # 环境安装 🐍
 
 ```shell
+git clone https://github.com/FunAudioLLM/Fun-ASR.git
+cd Fun-ASR
 pip install -r requirements.txt
 ```
 
