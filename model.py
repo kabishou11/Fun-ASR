@@ -116,13 +116,6 @@ class FunASRNano(nn.Module):
             llm_dim if llm_dim is not None else audio_adaptor_conf["llm_dim"]
         )
         audio_adaptor = adaptor_class(**audio_adaptor_conf)
-        init_param_path = audio_adaptor_conf.get("init_param_path", None)
-        if init_param_path is not None:
-            src_state = torch.load(init_param_path, map_location="cpu")
-            flag = audio_adaptor.load_state_dict(src_state, strict=False)
-            logging.info(
-                f"Loading audio_adaptor ckpt: {init_param_path}, status: {flag}"
-            )
         freeze = audio_adaptor_conf.get("freeze", False)
         if freeze:
             for name, param in audio_adaptor.named_parameters():
