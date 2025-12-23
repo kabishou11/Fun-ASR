@@ -122,6 +122,7 @@ class FunASRNano(nn.Module):
                 param.requires_grad = False
             audio_adaptor.eval()
         self.audio_adaptor = audio_adaptor
+        self.use_low_frame_rate = audio_adaptor_conf.get("use_low_frame_rate", False)
 
         self.length_normalized_loss = length_normalized_loss
         self.feat_permute = audio_encoder_conf.get("feat_permute", True)
@@ -387,9 +388,12 @@ class FunASRNano(nn.Module):
                         if self.feat_permute:
                             speech = speech.permute(0, 2, 1)
 
-                        olens = 1 + (speech_lengths[0].item() - 3 + 2 * 1) // 2
-                        olens = 1 + (olens - 3 + 2 * 1) // 2
-                        fake_token_len_i = (olens - 1) // 2 + 1
+                        if self.use_low_frame_rate:
+                            olens = 1 + (speech_lengths[0].item() - 3 + 2 * 1) // 2
+                            olens = 1 + (olens - 3 + 2 * 1) // 2
+                            fake_token_len_i = (olens - 1) // 2 + 1
+                        else:
+                            fake_token_len_i = speech_lengths[0].item()
                         fake_token = [0] * fake_token_len_i
                         fbank_beg_i = len(source_ids)
                         source_ids += fake_token
