@@ -2,3 +2,7 @@ torch
 torchaudio
 transformers
 funasr>=1.2.7
+streamlit
+numpy
+soundfile
+modelscope

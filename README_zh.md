@@ -202,3 +202,13 @@ if __name__ == "__main__":
       url={https://arxiv.org/abs/2509.12508}, 
 }
 ```
+
+
+
+pip install transformers --upgrade
+pip install torchcodec
+sudo apt update
+sudo apt install ffmpeg -y
+
+cd /root/autodl-tmp/Fun-ASR
+streamlit run app.py
